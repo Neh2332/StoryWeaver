@@ -35,7 +35,7 @@ Before starting, ensure you have the following installed on your machine:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/stevedylandev/bhvr.git storyweaver
+git clone https://github.com/Neh2332/StoryWeaver
 cd storyweaver
 ```
 
@@ -51,14 +51,14 @@ bun install
 
 Create `.env` files in your workspace (or at the root, depending on your setup) using the following configuration. The core environment variables required are:
 
-| Variable | Description | Example |
-| -------- | ----------- | ------- |
-| `DATABASE_URL` | PostgreSQL connection string | `postgresql://user:pass@localhost:5432/storyweaver` |
-| `BETTER_AUTH_SECRET` | Secret key for Better Auth sessions | `your-secret-string` |
-| `BETTER_AUTH_URL` | Base URL for auth callbacks | `http://localhost:5173` |
-| `GEMINI_API_KEY` | Your Google Gemini API Key | `AIzaSy...` |
-| `GCS_BUCKET_NAME` | Google Cloud Storage Bucket Name | `my-storyweaver-bucket` |
-| `GOOGLE_APPLICATION_CREDENTIALS` | Path to your GCP service account JSON | `./gcp-key.json` |
+| Variable                         | Description                           | Example                                             |
+| -------------------------------- | ------------------------------------- | --------------------------------------------------- |
+| `DATABASE_URL`                   | PostgreSQL connection string          | `postgresql://user:pass@localhost:5432/storyweaver` |
+| `BETTER_AUTH_SECRET`             | Secret key for Better Auth sessions   | `your-secret-string`                                |
+| `BETTER_AUTH_URL`                | Base URL for auth callbacks           | `http://localhost:5173`                             |
+| `GEMINI_API_KEY`                 | Your Google Gemini API Key            | `AIzaSy...`                                         |
+| `GCS_BUCKET_NAME`                | Google Cloud Storage Bucket Name      | `my-storyweaver-bucket`                             |
+| `GOOGLE_APPLICATION_CREDENTIALS` | Path to your GCP service account JSON | `./gcp-key.json`                                    |
 
 Additional optional variables for OAuth include `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET`, `GOOGLE_CLIENT_ID`, and `GOOGLE_CLIENT_SECRET`.
 
@@ -126,27 +126,27 @@ This command will automatically spin up:
 
 ### Required for Local Development
 
-| Variable | Description |
-| -------- | ----------- |
-| `DATABASE_URL` | Used by Drizzle to connect to Postgres. |
-| `GEMINI_API_KEY` | Required to communicate with Google's GenAI endpoints. |
-| `GCS_BUCKET_NAME` | The bucket used to store user-generated video content. |
+| Variable                         | Description                                                           |
+| -------------------------------- | --------------------------------------------------------------------- |
+| `DATABASE_URL`                   | Used by Drizzle to connect to Postgres.                               |
+| `GEMINI_API_KEY`                 | Required to communicate with Google's GenAI endpoints.                |
+| `GCS_BUCKET_NAME`                | The bucket used to store user-generated video content.                |
 | `GOOGLE_APPLICATION_CREDENTIALS` | The local path to the Google service account key file for GCS access. |
-| `BETTER_AUTH_SECRET` | Required by Better Auth for signing cookies and tokens. |
-| `BETTER_AUTH_URL` | The application base URL for authentication flows. |
+| `BETTER_AUTH_SECRET`             | Required by Better Auth for signing cookies and tokens.               |
+| `BETTER_AUTH_URL`                | The application base URL for authentication flows.                    |
 
 ## Available Scripts
 
 From the root of the project, you can run:
 
-| Command | Description |
-| ------- | ----------- |
-| `bun run dev` | Starts all development servers (Client, Server, Studio) using Turborepo. |
-| `bun run build` | Builds all packages. |
-| `bun run lint` | Runs ESLint across all workspaces. |
-| `bun run type-check` | Runs TypeScript compiler checks. |
+| Command                | Description                                                                                                                   |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `bun run dev`          | Starts all development servers (Client, Server, Studio) using Turborepo.                                                      |
+| `bun run build`        | Builds all packages.                                                                                                          |
+| `bun run lint`         | Runs ESLint across all workspaces.                                                                                            |
+| `bun run type-check`   | Runs TypeScript compiler checks.                                                                                              |
 | `bun run build:single` | Builds the client and studio, copies their static assets to `server/static`, and builds the server for production deployment. |
-| `bun run start:single` | Starts the production server which serves the API and the static SPA assets. |
+| `bun run start:single` | Starts the production server which serves the API and the static SPA assets.                                                  |
 
 ## Testing
 
